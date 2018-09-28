@@ -1,0 +1,36 @@
+import numpy
+
+m = int(raw_input('Valor de m:'))
+n = m
+matriz = numpy.zeros((m,n))
+vetor = numpy.zeros((n))
+x=numpy.zeros((m))
+print("Por favor insira os valores da matriz e, da matriz solução B")
+
+for r in range(0,m):
+    for c in range(0,n):
+        matriz[(r),(c)]=(raw_input("Elemento a "+str(r+1)","+str(c+1)))
+    vector[(r)]=(raw_input("b[]: "))
+print(matriz)
+
+for k in range(0,m):
+    for r in range(k+1,m):
+        pivo=(matriz[r,k]/matriz[k,k])
+        vetor[r]=vetor[r]-(pivo*vetor[k])
+        for c in range(0,n):
+            matriz[r,c]=matriz[r,c]-(pivo*matriz[k,c])
+#Substituindo de traz pra frente
+x[m-1]=vetor[m-1]/matriz[m-1,m-1]
+
+for r in range(m-2,-1,-1):
+    soma=0
+    for c in range(0,n):
+        soma=soma+matriz[r,c]*x[c]
+    x[r]=(vetor[r]-soma)/matriz[r,r]
+print("Resultado matriz")
+print(matriz)
+print("Resultado do vetor")
+print(vetor)
+print("Resultados:")
+print(x)
+
