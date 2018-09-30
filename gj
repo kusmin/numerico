@@ -9,7 +9,7 @@ print("Por favor insira os valores da matriz e, da matriz solução B")
 
 for r in range(0,m):
     for c in range(0,n):
-        matriz[(r),(c)]=(raw_input("Elemento a "+str(r+1)","+str(c+1)))
+        np.matriz[(r),(c)]=(raw_input("Elemento a "+str(r+1)","+str(c+1)))
     vector[(r)]=(raw_input("b[]: "))
 print(matriz)
 
